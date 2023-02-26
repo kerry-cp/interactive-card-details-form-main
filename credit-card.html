@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/normalize.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Credit Card Task</title>
+	</head>
+
+	<body>
+		<div class="cc-container">
+			<div class="container-left">
+				<div class="cards">
+					<div class="card-front">
+						<div class="card-circles">
+							<div class="circle1"></div>
+							<div class="circle2"></div>
+						</div>
+						<img src="/images/bg-card-front.png" alt="" class="front" />
+						<p class="card-number">0000 0000 0000 0000</p>
+						<p class="card-name">Jane Appleseed</p>
+						<p class="card-expiry-month">00</p>
+						<p class="card-expiry-year">00</p>
+					</div>
+
+					<div class="card-back">
+						<img src="/images/bg-card-back.png" alt="" class="back" />
+						<p class="card-cvc">000</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-container">
+				<form action="#" method="post" id="form1">
+					<ul>
+						<li>
+							<label for="name"> Cardholder Name </label>
+							<input
+								type="text"
+								id="name"
+								name="card_name"
+								placeholder="e.g. Jane Appleseed"
+							/>
+						</li>
+
+						<li>
+							<label for="card-number"> Card Number</label>
+							<input
+								id="card-number"
+								name="card_number"
+								maxlength="19"
+								placeholder="e.g. 0000 0000 0000 0000"
+								type="text"
+								pattern="[0-9]*"
+								inputmode="numeric"
+								onkeypress="preventNonNumericalInput(event)"
+							/>
+						</li>
+
+						<li>
+							<label for="card-expiry-month"> EXP. DATE (MM/YY) </label>
+							<input
+								type="number"
+								id="card-expiry-month"
+								name="card_expiry_month"
+								placeholder="MM"
+								max="99"
+							/>
+
+							<label for="card-expiry-year"> </label>
+							<input
+								type="number"
+								id="card-expiry-year"
+								name="card_expiry_year"
+								placeholder="YY"
+								max="99"
+							/>
+						</li>
+
+						<li>
+							<label for="cvc"> CVC </label>
+							<input
+								type="number"
+								id="cvc"
+								name="cvc"
+								placeholder="e.g. 123"
+								max="99"
+							/>
+						</li>
+
+						<li>
+							<button class="confirm" form="form1" value="Confirm">
+								Confirm
+							</button>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+
+		<script src="/main.js"></script>
+	</body>
+</html>
